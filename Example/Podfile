@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SwiftyPopup_Example' do
+  pod 'SwiftyPopup', :path => '../'
+
+  target 'SwiftyPopup_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
