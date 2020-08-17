@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39D13D9C5681913650EC3D9B /* SwiftyPopup.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SwiftyPopup.podspec; path = ../SwiftyPopup.podspec; sourceTree = "<group>"; };
+		39D13D9C5681913650EC3D9B /* SwiftyPopup.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftyPopup.podspec; path = ../SwiftyPopup.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACD01AFB9204008FA782 /* SwiftyPopup_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyPopup_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +43,8 @@
 		7F18D4933CE7012D02C5E1ED /* Pods-SwiftyPopup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPopup_Tests.release.xcconfig"; path = "Target Support Files/Pods-SwiftyPopup_Tests/Pods-SwiftyPopup_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B45F4F70E5B9BB25B14D81DE /* Pods-SwiftyPopup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPopup_Example.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyPopup_Example/Pods-SwiftyPopup_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9DBF1FA1E6DD1A23060B67 /* Pods-SwiftyPopup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPopup_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyPopup_Tests/Pods-SwiftyPopup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C277219D1995AA1315427D3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		ED5B6377AD2C0F675CFF7BAE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C277219D1995AA1315427D3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		ED5B6377AD2C0F675CFF7BAE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EEA0C9E709EB7D1333F7C2FC /* Pods_SwiftyPopup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyPopup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47432630414A22545438DE0 /* Pods-SwiftyPopup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPopup_Example.release.xcconfig"; path = "Target Support Files/Pods-SwiftyPopup_Example/Pods-SwiftyPopup_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +156,6 @@
 				BA9DBF1FA1E6DD1A23060B67 /* Pods-SwiftyPopup_Tests.debug.xcconfig */,
 				7F18D4933CE7012D02C5E1ED /* Pods-SwiftyPopup_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,10 +313,20 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftyPopup_Example/Pods-SwiftyPopup_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyPopup/SwiftyPopup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPopup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
