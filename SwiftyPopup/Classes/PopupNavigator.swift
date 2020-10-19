@@ -15,7 +15,8 @@ public enum PopupStyle {
 }
 
 public class PopupNavigator {
-    public static var container: UIView? {
+    public static weak var defaultWindow: UIWindow?
+    public static weak var container: UIView? {
         didSet {
             _isAllPopupDismissed.accept(container == nil)
         }
@@ -30,7 +31,7 @@ public class PopupNavigator {
         in container: UIView? = nil
     ) -> Promise<T.ResultType> {
         
-        assert(Self.container == nil)
+//        assert(Self.container == nil)
         return show(popup: root, in: container, isRoot: true)
     }
     
@@ -54,7 +55,8 @@ public class PopupNavigator {
     ) -> Promise<T.ResultType> {
         
         // Container is nil
-        guard let container  = container ?? .keyWindow else {
+        let window = UIView.keyWindow ?? defaultWindow
+        guard let container  = container ?? window else {
             return Promise<T.ResultType> {
                 throw NSError(domain: "swifty_popup", code: 1, userInfo: nil)
             }
