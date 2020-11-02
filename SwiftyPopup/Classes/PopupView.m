@@ -602,6 +602,8 @@ static const PopupViewLayout PopupViewLayoutCenter = {PopupViewHorizontalLayoutC
                 }
                     break;
                 case PopupViewMaskTypeNone: {
+                    
+                    _backgroundView.userInteractionEnabled = NO;
                     [UIView animateWithDuration:0.15
                                           delay:0
                                         options:UIViewAnimationOptionCurveLinear

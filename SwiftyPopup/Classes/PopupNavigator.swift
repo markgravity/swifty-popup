@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 public enum PopupStyle {
-    case center, bottom, left, right, fullscreen
+    case center, top, bottom, left, right, fullscreen
 }
 
 public class PopupNavigator {
@@ -57,7 +57,7 @@ public class PopupNavigator {
         // Container is nil
         let window = UIView.keyWindow ?? defaultWindow
         guard let container  = container ?? window else {
-            return Promise<T.ResultType> {
+            return Promise<T.ResultType>() {
                 throw NSError(domain: "swifty_popup", code: 1, userInfo: nil)
             }
         }
@@ -80,8 +80,14 @@ public class PopupNavigator {
                 Self.container = nil
             }
         }
+        
+        // Dimmed mask alpha
         presenter.dimmedMaskAlpha = popup.dimmedMaskAlpha
         
+        // Mask type
+        presenter.maskType = popup.maskType
+        
+        // On background tap
         presenter.onBackgroundTap = { [unowned popup] in
             popup.onBackgroundTap()
         }
@@ -93,6 +99,11 @@ public class PopupNavigator {
             layout = PopupView.Layout(horizontal: .center, vertical: .center)
             presenter.showType = .shrinkIn
             presenter.dismissType = .shrinkOut
+            
+        case .top:
+            layout = PopupView.Layout(horizontal: .center, vertical: .top)
+            presenter.showType = .slideInFromTop
+            presenter.dismissType = .slideOutToTop
             
         case .bottom:
             layout = PopupView.Layout(horizontal: .center, vertical: .bottom)
@@ -173,7 +184,7 @@ public class PopupNavigator {
         var width: CGFloat = 0
         var height: CGFloat = 0
         switch style {
-        case .bottom:
+        case .bottom, .top:
             width = baseSize.width
             height = baseSize.height - minVerticalSpacing
             viewSize.width = width

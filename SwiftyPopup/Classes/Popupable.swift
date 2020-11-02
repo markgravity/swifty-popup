@@ -13,6 +13,7 @@ public protocol Popupable: UIView {
     var navigation: PopupNavigation<ResultType>! { get set }
     var shouldDismissOnBackgroundTap: Bool { get }
     var dimmedMaskAlpha: CGFloat { get }
+    var maskType: PopupMaskType { get }
     var style: PopupStyle { get }
     var minHorizontalSpacing: CGFloat { get }
     var minVerticalSpacing: CGFloat { get }
@@ -23,6 +24,7 @@ public protocol Popupable: UIView {
 
 public extension Popupable {
     var dimmedMaskAlpha: CGFloat { 0.5 }
+    var maskType: PopupMaskType { .dimmed }
     var shouldDismissOnBackgroundTap: Bool { true }
     var style: PopupStyle { .center }
     var minHorizontalSpacing: CGFloat { 40 }
@@ -50,3 +52,6 @@ public extension Popupable where ResultType == Bool {
         navigation.pop(false)
     }
 }
+
+// Typealias
+public typealias PopupMaskType = PopupView.MaskType
